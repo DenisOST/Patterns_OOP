@@ -17,7 +17,8 @@ class Child : public IChild
 	string Surname = "";
 	string Name = "";
 	string Patronymic = "";
-	Task* CurrentTask;
+	Task* CurrentTask;			// Это динамическое Делегирование, поэтому сюда можно подставлять разные типы заданий для ребенка
+	IGames* CurrentGame;
 	int Scores = 0;
 
 public:
@@ -83,7 +84,27 @@ public:
 		CurrentTask = task;
 	}
 
-	void OutputFIO()
+	void SetGame(Games* game)
+	{
+		CurrentGame = game;
+	}
+
+	void PlayTheGame()
+	{
+		// Прокси
+		//==================================
+		if(CurrentGame == NULL)
+		{
+			CurrentGame = new GamesProxy();
+			CurrentGame->PlayInGame();
+			CurrentGame = NULL;
+		}
+		//==================================
+		else
+			CurrentGame->PlayInGame();
+	}
+
+	virtual void OutputFIO()
 	{
 		cout << endl << Surname << " " << Name << " " << Patronymic << endl;
 	}

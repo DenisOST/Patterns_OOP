@@ -10,7 +10,7 @@ using namespace std;
 class Group
 {
 	string Name = "";
-	vector <Child*> child;
+	vector <Child*> child;	// Статическое делегирование, т.к. дети в группе не изменяются
 
 public:
 	Group()
@@ -40,6 +40,14 @@ public:
 	int GetCountChilds()
 	{
 		return child.size();
+	}
+
+	void DisplayNameOfGroup()
+	{
+		if (Name != "")
+			cout << Name << endl;
+		else
+			cout << "У группы не задали имя!" << endl;
 	}
 
 	void DeleteChild(string surname)

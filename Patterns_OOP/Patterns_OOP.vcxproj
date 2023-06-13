@@ -146,6 +146,7 @@
     <ClInclude Include="Emulation.h" />
     <ClInclude Include="GameCorner.h" />
     <ClInclude Include="Games.h" />
+    <ClInclude Include="GamesProxy.h" />
     <ClInclude Include="Group.h" />
     <ClInclude Include="Program.h" />
     <ClInclude Include="Task.h" />

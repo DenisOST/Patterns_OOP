@@ -28,8 +28,11 @@ public:
 		cout << "Введите ответ: ";
 		string answer;
 		if (Emulation::RandomAnswer() == 1)
+		{
 			Answer = answer;
-		else
+			cout << Answer << endl;	
+		}			
+		else		
 		{
 			cout << "Не знаю!" << endl;
 			Answer = "Не знаю!";

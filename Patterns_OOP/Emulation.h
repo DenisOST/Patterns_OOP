@@ -32,5 +32,20 @@ public:
         int num = rand() % 2;
         return num;
     }
+
+    // Функция генерирования случайного целочисленного числа в указанных пределах.
+    // Диапазон чисел: [min, max]
+    static int GetRandomInt(int min, int max)
+    {
+        // Установить генератор случайных чисел
+        srand(time(NULL));
+
+        // Получить случайное число - формула
+        int num = min + rand() % (max - min + 1);
+
+        return num;
+    }
 };
+
+
 
